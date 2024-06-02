@@ -1,0 +1,47 @@
+6)	Perform univariate analysis on a dataset containing information about the performance of students in a school. The dataset includes variables such as student ID, test scores in different subjects, attendance, and socio-economic background. Use Python to analyze the distribution of test scores in each subject separately. Calculate the mean, median, and standard deviation for each subject and visualize the distribution using box plots. 
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+# Read the dataset
+data = pd.read_csv("C:\\Users\\ASUS\\Downloads\\student_performance_dataset.csv")  # Replace "student_performance_dataset.csv" with the actual file name
+# Analyze test scores in different subjects
+subjects = ['math', 'science', 'english']  # Add more subjects if needed
+for subject in subjects:
+    subject_scores = data[subject]
+    # Calculate descriptive statistics
+    mean_score = np.mean(subject_scores)
+    median_score = np.median(subject_scores)
+    std_score = np.std(subject_scores)
+
+    # Visualize the distribution using a box plot
+    plt.boxplot(subject_scores)
+    plt.xlabel(subject.capitalize() + " Score")
+    plt.ylabel("Score")
+    plt.title("Distribution of " + subject.capitalize() + " Scores")
+    plt.show()
+
+    # Print the results
+    print(subject.capitalize() + " Scores:")
+    print("Mean:", mean_score)
+    print("Median:", median_score)
+    print("Standard Deviation:", std_score)
+    print()
+
+
+Math Scores:
+Mean: 66.089
+Median: 66.0
+Standard Deviation: 15.155496659628165
+
+
+Science Scores:
+Mean: 69.169
+Median: 70.0
+Standard Deviation: 14.59289001534652
+
+
+English Scores:
+Mean: 68.054
+Median: 69.0
+Standard Deviation: 15.188057281956757

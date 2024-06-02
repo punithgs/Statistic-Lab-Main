@@ -1,0 +1,28 @@
+gv9)	Develop a Python/R code to build a simple Linear Regression model to predict sales units based on the advertising budget spent on TV. Display the statistical summary of the model.
+
+
+import numpy as np
+from sklearn.linear_model import LinearRegression
+import matplotlib.pyplot as plt
+
+data = {'sales': [2, 4, 6, 9, 12, 34, 45],'tv': [1, 2, 4, 7, 9, 11, 15]}
+X = np.array(data['tv']).reshape(-1, 1)
+y = np.array(data['sales'])
+
+model = LinearRegression()
+model.fit(X, y)
+
+print("Coefficients: ", model.coef_)
+print("Intercept: ", model.intercept_)
+
+plt.scatter(X, y, color='blue', label='Data Points')
+plt.plot(X, model.predict(X), color='red', label='Regression Line')
+plt.title('Linear Regression: Sales vs TV Ad Budget')
+plt.xlabel('TV Ad Budget')
+plt.ylabel('Sales')
+plt.legend()
+plt.grid(True)
+plt.show()
+
+Coefficients:  [3.05194805]
+Intercept:  -5.363636363636363

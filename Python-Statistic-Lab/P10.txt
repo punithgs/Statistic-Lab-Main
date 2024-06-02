@@ -1,0 +1,24 @@
+10)	Consider Australian Drug Sales dataset and develop a Python/R code to perform Time Series Analysis and visualize using plots.
+
+
+import numpy as np
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Reading the CSV file from the specified path
+df = pd.read_csv("C:\\Users\\ASUS\\Desktop\\Python-Statistic-Lab\\Ausdrug_dataset.csv")
+
+# Converting the 'ds' column to datetime format
+df['ds'] = pd.to_datetime(df['ds'])
+
+# Setting the seaborn style and color codes
+sns.set(style="whitegrid", color_codes=True)
+
+# Plotting the data
+plt.figure(figsize=(16, 6))
+plt.plot(df['ds'], df['y'])
+plt.xlabel("Time")
+plt.ylabel("$ Millions")
+plt.title("Antibiotic Drug")
+plt.show()

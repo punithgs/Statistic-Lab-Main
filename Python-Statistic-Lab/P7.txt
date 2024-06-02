@@ -1,0 +1,38 @@
+7)	Consider the scores of ten students in SMIP and DBMS and Compute the Spearman rank correlation and Interpret the results using Python/R
+
+
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+import numpy as np
+import scipy.stats as st
+
+x = [70, 46, 54, 34, 20, 86, 18, 12, 56, 64, 42]
+y = [60, 66, 90, 46, 16, 48, 74, 8, 32, 54, 62]
+
+# Creating DataFrame
+df = pd.DataFrame({'SMIP': x, 'DBMS': y})
+
+# Calculating correlation matrix
+corr = df.corr()
+
+# Plotting heatmap
+sns.heatmap(corr, annot=True)
+plt.title('Correlation Heatmap')
+plt.show()
+
+# Calculating Spearman correlation coefficient and p-value
+corr_spearman, pval_spearman = st.spearmanr(x, y)
+print("Spearman correlation coefficient:", corr_spearman)
+print("p-value:", pval_spearman)
+
+# Plotting histogram of correlation coefficients
+plt.hist(corr.values.flatten(), bins=10)
+plt.title('Histogram of Correlation Coefficients')
+plt.xlabel('Correlation Coefficient')
+plt.ylabel('Frequency')
+plt.show()
+
+
+Spearman correlation coefficient: 0.19090909090909092
+p-value: 0.5739131682855215
