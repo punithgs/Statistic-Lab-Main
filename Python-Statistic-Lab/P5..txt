@@ -1,0 +1,27 @@
+import numpy as np
+import matplotlib.pyplot as plt
+# House prices dataset
+house_prices = [300000, 350000, 320000, 280000, 400000, 380000, 330000, 310000, 290000, 270000, 350000, 380000, 370000]
+# Calculate mean
+mean_price = np.mean(house_prices)
+print("Mean price:", mean_price)
+# Calculate median
+median_price = np.median(house_prices)
+print("Median price:", median_price)
+# Calculate mode
+mode_price = np.argmax(np.bincount(house_prices))
+print("Mode price:", mode_price)
+# Calculate standard deviation
+std_price = np.std(house_prices)
+print("Standard deviation:", std_price)
+# Create box plot
+plt.boxplot(house_prices)
+plt.ylabel("Price")
+plt.title("Distribution of House Prices")
+plt.show()
+
+
+Mean price: 333076.92307692306
+Median price: 330000.0
+Mode price: 350000
+Standard deviation: 40455.980899399096
