@@ -1,0 +1,13 @@
+import numpy as n
+import pandas as p
+import matplotlib.pyplot as m
+s=p.read_csv(r"C:\Users\ASUS\Downloads\student_performance_dataset (1).csv")
+subject=["science","english","math"]
+for sub in subject:
+    d=s[sub]
+    print("performance of students in",sub,":\nMean: ",n.mean(d),"\nMedian: ",n.median(d),"\nMode: ",n.argmax(n.bincount(d)),"\nStandard Deviation: ",n.std(d),"\n\n\n")
+    m.boxplot(d)
+    m.title("performance of students :")
+    m.ylabel("scores")
+    m.xlabel(sub)
+    m.show()

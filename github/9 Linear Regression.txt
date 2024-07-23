@@ -1,0 +1,17 @@
+import numpy as n
+import matplotlib.pyplot as m
+from sklearn.linear_model import LinearRegression
+d = {'sales': [2, 4, 6, 9, 12, 34, 45],'tv': [1, 2, 4, 7, 9, 11, 15]}
+x=n.array(d['tv']).reshape(-1,1)
+y=n.array(d['sales'])
+model=LinearRegression()
+model.fit(x,y)
+print("\n\nCo-efficient",model.coef_,"\nIntercept",model.intercept_)
+m.scatter(x,y,color="blue",label="Points")
+m.plot(x,model.predict(x),color="red",label="Linear Regression")
+m.title("\n\nsimple Linear Regression model")
+m.ylabel("Sales")
+m.xlabel("tv")
+m.grid(True)
+m.legend()
+m.show()

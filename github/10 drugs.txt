@@ -1,0 +1,13 @@
+import numpy as n
+import pandas as p
+import seaborn as s
+import matplotlib.pyplot as m
+d=p.read_csv(r"C:\Users\ASUS\Downloads\Statistics-Python-main (1)\Statistics-Python-main\Drug_dataset.csv")
+d['ds']=p.to_datetime(d['ds'])
+m.figure(figsize=(16,6))
+m.plot(d['ds'],d['y'])
+m.title("\nTime Series Analysis")
+m.ylabel("Frequency")
+m.grid(True)
+m.xlabel("Time")
+m.show()

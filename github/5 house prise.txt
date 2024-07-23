@@ -1,0 +1,9 @@
+import numpy as n
+import matplotlib.pyplot as m
+d=[300000, 350000, 320000, 280000, 400000, 380000, 330000, 310000, 290000, 270000, 350000, 380000, 370000]
+print("prices of houses:\nMean: ",n.mean(d),"\nMedian: ",n.median(d),"\nMode: ",n.argmax(n.bincount(d)),"\nStandard Deviation: ",n.std(d),"\n\n\n")
+m.boxplot(d)
+m.title("prices of houses:")
+m.ylabel("prize")
+m.xlabel("Houses")
+m.show()

@@ -1,0 +1,18 @@
+import numpy as n 
+import pandas as p
+import matplotlib.pyplot as m
+import seaborn as s
+import scipy.stats as st
+x=[70, 46, 54, 34, 20, 86, 18, 12, 56, 64, 42]
+y=[60, 66, 90, 46, 16, 48, 74, 8, 32, 54, 62]
+d=p.DataFrame({'SMTP':x,'DBMS':y})
+s.heatmap(d.corr(), annot=True)
+m.title("Heatmap | scores of ten students:")
+m.show()
+m.hist(d.corr().values.flatten(), bins=10)
+m.title("\n\nHistogram | scores of ten students:")
+m.ylabel("students")
+m.xlabel("Scores")
+m.show()
+scr,pval=st.spearmanr(x,y)
+print("\n\nSpearmans coorelation: ",scr,"\nP_value: ",pval)
