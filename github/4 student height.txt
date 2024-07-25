@@ -4,6 +4,6 @@ d=[165, 170, 168, 172, 175, 169, 180, 160, 165, 172, 168, 176, 170, 173, 165]
 print("Heights of students:\nMean: ",n.mean(d),"\nMedian: ",n.median(d),"\nMode: ",n.argmax(n.bincount(d)),"\nStandard Deviation: ",n.std(d),"\n\n\n")
 m.hist(d)
 m.title("Heights of Students:")
-m.xlabel("Heights")
 m.ylabel("Students")
+m.xlabel("Heights")
 m.show()
